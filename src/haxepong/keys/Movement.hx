@@ -43,11 +43,11 @@ class Movement
 		{
 			x -= mf;
 		}
-		if (FlxG.keys.pressed.RIGHT)
+		if (FlxG.keys.pressed.DOWN)
 		{
 			y += mf;
 		}
-		if (FlxG.keys.pressed.DOWN)
+		if (FlxG.keys.pressed.RIGHT)
 		{
 			x += mf;
 		}
