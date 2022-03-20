@@ -2,22 +2,21 @@ package haxepong;
 
 import flixel.FlxSprite;
 import flixel.FlxState;
-import flixel.math.FlxPoint;
 import flixel.util.FlxColor;
 import haxepong.assets.Resources;
 import haxepong.keys.Movement;
 
 class Game extends FlxState
 {
-	static var boxbottom:FlxSprite;
-	static var boxleft:FlxSprite;
-	static var boxright:FlxSprite;
-	static var boxtop:FlxSprite;
+	public static var boxbottom:FlxSprite;
+	public static var boxleft:FlxSprite;
+	public static var boxright:FlxSprite;
+	public static var boxtop:FlxSprite;
 
-	static var player1:FlxSprite; // Left
-	static var player2:FlxSprite; // Right
+	public static var player1:FlxSprite; // Left
+	public static var player2:FlxSprite; // Right
 
-	static var ball:FlxSprite;
+	public static var ball:FlxSprite;
 
 	public override function create()
 	{
