@@ -5,6 +5,8 @@ import flixel.FlxState;
 import flixel.util.FlxColor;
 import haxepong.assets.Resources;
 import haxepong.keys.Movement;
+import haxepong.physics.Ball;
+import haxepong.physics.Direction;
 
 class Game extends FlxState
 {
@@ -85,7 +87,38 @@ class Game extends FlxState
 			player2.x += 180;
 		}
 
-		if (player1.overlaps(ball) || player1.x < ball.x + (ball.width / 2)) {}
-		if (player2.overlaps(ball) || player2.x > ball.x + (ball.width / 2)) {}
+		if (player1.overlaps(ball) || player1.x < ball.x + (ball.width / 2))
+		{
+			if (player1.y == ball.y)
+			{
+				Ball.push(Direction.RIGHT, 1);
+			}
+			else if (player1.y >= ball.y)
+			{
+				Ball.push(Direction.RIGHT_UP, 1);
+			}
+			else if (player1.y <= ball.y)
+			{
+				Ball.push(Direction.RIGHT_DOWN, 1);
+			}
+		}
+		if (player2.overlaps(ball) || player2.x > ball.x + (ball.width / 2))
+		{
+			if (player2.y == ball.y)
+			{
+				Ball.push(Direction.LEFT, 1);
+			}
+			else if (player2.y >= ball.y)
+			{
+				Ball.push(Direction.LEFT_UP, 1);
+			}
+			else if (player2.y <= ball.y)
+			{
+				Ball.push(Direction.LEFT_DOWN, 1);
+			}
+		}
+
+		ball.x += Ball.mfx;
+		ball.y += Ball.mfy;
 	}
 }
